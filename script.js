@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     const nationList = document.getElementById('nation-list');
+    const searchInput = document.getElementById('search');
 
     function loadNations() {
         const playedNations = JSON.parse(localStorage.getItem('playedNations')) || [];
@@ -43,6 +44,17 @@ document.addEventListener('DOMContentLoaded', () => {
         button.classList.toggle('played');
         localStorage.setItem('playedNations', JSON.stringify(playedNations));
     }
+
+    function filterNations() {
+        const searchTerm = searchInput.value.toLowerCase();
+        const lis = nationList.getElementsByTagName('li');
+        Array.from(lis).forEach(li => {
+            const nation = li.firstChild.textContent.toLowerCase();
+            li.style.display = nation.includes(searchTerm) ? '' : 'none';
+        });
+    }
+
+    searchInput.addEventListener('input', filterNations);
 
     loadNations();
 });
