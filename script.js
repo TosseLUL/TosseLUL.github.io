@@ -17,6 +17,16 @@ document.addEventListener('DOMContentLoaded', () => {
     function addNationToList(nation) {
         const li = document.createElement('li');
         li.textContent = nation;
+
+        const deleteBtn = document.createElement('button');
+        deleteBtn.textContent = 'Delete';
+        deleteBtn.classList.add('delete-btn');
+        deleteBtn.addEventListener('click', () => {
+            li.remove();
+            deleteNation(nation);
+        });
+
+        li.appendChild(deleteBtn);
         nationList.appendChild(li);
     }
 
@@ -31,5 +41,12 @@ document.addEventListener('DOMContentLoaded', () => {
         nations.forEach(nation => addNationToList(nation));
     }
 
+    function deleteNation(nation) {
+        let nations = JSON.parse(localStorage.getItem('nations')) || [];
+        nations = nations.filter(n => n !== nation);
+        localStorage.setItem('nations', JSON.stringify(nations));
+    }
+
     loadNations();
 });
+
