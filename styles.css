@@ -15,19 +15,19 @@ body {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 90%;
-    max-width: 1000px;
+    max-width: 1200px;
     text-align: center;
     overflow: hidden;
 }
 
 h1 {
     margin-bottom: 10px;
-    font-size: 1.5em;
+    font-size: 1.2em;
 }
 
 input[type="text"] {
     width: calc(100% - 22px);
-    padding: 8px;
+    padding: 5px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 3px;
@@ -52,9 +52,9 @@ li {
     border: 1px solid #ccc;
     border-radius: 3px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    font-size: 0.8em;
+    font-size: 0.7em;
 }
 
 button {
@@ -65,6 +65,7 @@ button {
     border-radius: 3px;
     cursor: pointer;
     font-size: 0.7em;
+    margin-top: 5px;
 }
 
 button:hover {
@@ -78,6 +79,7 @@ button.played {
 button.played:hover {
     background: #218838;
 }
+
 
 
 
