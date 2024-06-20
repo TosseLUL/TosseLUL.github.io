@@ -41,19 +41,20 @@ input[type="text"] {
 ul {
     list-style-type: none;
     padding: 0;
-    display: inline-flex;
     margin: 0;
-    white-space: nowrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
 }
 
 li {
     background: #f4f4f4;
-    padding: 5px;
+    padding: 10px;
     border: 1px solid #ccc;
-    margin: 5px;
     border-radius: 3px;
-    display: inline-block;
-    vertical-align: top;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 button {
@@ -77,6 +78,7 @@ button.played {
 button.played:hover {
     background: #218838;
 }
+
 
 
 
